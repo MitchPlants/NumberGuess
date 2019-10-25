@@ -6,7 +6,11 @@ public class NumberGuess {
         String answer;
         Scanner Keyboard;
         Keyboard = new Scanner(System.in);
-        number = 5;
+
+        do {
+
+            number = generateGuess(1);
+            System.out.println("guess a number between 1-100");
 
             do{
 
@@ -19,7 +23,10 @@ public class NumberGuess {
                 }
             }while(!(Guess == number));
 
+            System.out.println("Good Job. Do you want to play again?");
+           answer = Keyboard.nextLine();
 
+        }while(!(answer == "yes")) ;
     }
     public static int generateGuess(int number) {
         for(int i = 0; i<100; i++) {
